@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: #312f2f;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  gap: 5px;
+}
+
+h1 span {
+  border: 1px solid white;
+  padding: 5px;
+}
+
+h1 span.s1 {
+  color: aqua;
+}
+h1 span.s2 {
+  color: rgb(196, 63, 176);
+}
+h1 span.s3 {
+  color: rgb(151, 168, 27);
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  width: 500px;
+  background: rgb(215, 214, 214);
+  cursor: grab;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  font-size: 1.3rem;
+  color: white;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100px;
+  height: 30px;
+}
