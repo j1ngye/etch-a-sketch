@@ -50,9 +50,32 @@ h1 span.s3 {
 
 form {
   display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+}
+
+.resize-div,
+.eraser-div {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.eraser-div > input {
+  border: none;
+  border-radius: 50px 5px 10px 10px;
+  background-color: pink;
+  opacity: 0.8;
+}
+
+.eraser-div > input:hover {
+  opacity: 1;
+}
+
+.eraser-div > input:active {
+  background-color: rgb(2, 226, 185);
 }
 
 label {

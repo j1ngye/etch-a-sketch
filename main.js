@@ -1,8 +1,11 @@
 const containerDiv = document.getElementById("container");
 const resizeInput = document.getElementById("resize");
+const eraser = document.getElementById("eraser");
+const eraseLabel = document.querySelector(".erase-label");
+console.log(eraseLabel);
 let gridSize = 16;
 let containerDivSize = 500;
-
+let eraseClick = false;
 resizeInput.addEventListener("change", (e) => {
   gridSize = e.target.value ? e.target.value : 16;
   if (gridSize > 100) {
@@ -10,6 +13,14 @@ resizeInput.addEventListener("change", (e) => {
     return false;
   }
   createGrid(gridSize);
+});
+
+eraser.addEventListener("click", () => {
+  eraseLabel.textContent = eraseClick ? "Fill👇🏼" : "Eraser👇🏼";
+  eraser.style.width = eraseClick ? "25px " : "100px";
+  eraser.style.height = eraseClick ? "25px " : "30px";
+  eraser.style.borderRadius = eraseClick ? "50% " : "50px 5px 10px 10px";
+  eraseClick = !eraseClick;
 });
 
 function createGrid(size) {
@@ -21,7 +32,7 @@ function createGrid(size) {
     cell.style.height = `${containerDivSize / size}px`;
     cell.style.opacity = 0;
     cell.addEventListener("mouseenter", (e) => {
-      addBgColor(e.target);
+      eraseClick ? eraseBgColor(e.target) : addBgColor(e.target);
       increaseOpacity(e.target);
     });
     containerDiv.append(cell);
@@ -41,3 +52,7 @@ function increaseOpacity(elem) {
   elem.style.opacity = originalOpacity + 0.2;
 }
 createGrid(gridSize);
+
+function eraseBgColor(elem) {
+  elem.style.backgroundColor = "";
+}
