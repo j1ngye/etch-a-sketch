@@ -41,8 +41,11 @@ h1 span.s3 {
   flex-wrap: wrap;
   height: 500px;
   width: 500px;
-  background: rgb(215, 214, 214);
   cursor: grab;
+}
+
+.container-border {
+  border: 10px solid white;
 }
 
 form {

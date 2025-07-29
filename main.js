@@ -1,6 +1,6 @@
 const containerDiv = document.getElementById("container");
 const resizeInput = document.getElementById("resize");
-let gridSize = +prompt("Enter the grid size:", 16);
+let gridSize = 16;
 let containerDivSize = 500;
 
 resizeInput.addEventListener("change", (e) => {
