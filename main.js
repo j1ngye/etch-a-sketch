@@ -2,7 +2,6 @@ const containerDiv = document.getElementById("container");
 const resizeInput = document.getElementById("resize");
 const eraser = document.getElementById("eraser");
 const eraseLabel = document.querySelector(".erase-label");
-console.log(eraseLabel);
 let gridSize = 16;
 let containerDivSize = 500;
 let eraseClick = false;
@@ -16,10 +15,10 @@ resizeInput.addEventListener("change", (e) => {
 });
 
 eraser.addEventListener("click", () => {
-  eraseLabel.textContent = eraseClick ? "Fill👇🏼" : "Eraser👇🏼";
-  eraser.style.width = eraseClick ? "25px " : "100px";
-  eraser.style.height = eraseClick ? "25px " : "30px";
-  eraser.style.borderRadius = eraseClick ? "50% " : "50px 5px 10px 10px";
+  eraseLabel.textContent = eraseClick ? "Eraser👇🏼" : "Fill👇🏼";
+  eraser.style.width = eraseClick ? "100px" : "25px ";
+  eraser.style.height = eraseClick ? "30px" : "25px ";
+  eraser.style.borderRadius = eraseClick ? "50px 5px 10px 10px" : "50% ";
   eraseClick = !eraseClick;
 });
 
